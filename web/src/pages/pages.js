@@ -1,5 +1,9 @@
 import Home from "./Home";
+import Login from "./Login";
+import Loading from "./Loading";
 
 export {
-  Home
+  Home,
+  Login,
+  Loading
 }

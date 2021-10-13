@@ -9,16 +9,27 @@ import {
 
 import Hooks from "./hooks";
 import Pages from "./pages"
+import Layouts from "./layouts";
 
 const Router = () => {
   const [user, loading] = Hooks.useAuth();
+  
+  if (loading) return <Pages.Loading />
 
-  console.log(user, loading);
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/"><Pages.Home /></Route>
-        <Route       path="*"><Redirect to="/" /></Route>
+        {user ?
+          <Layouts.Blank>
+            <Route exact path="/">     <Pages.Home /></Route>
+            <Route       path="*"><Redirect to="/" /></Route>
+          </Layouts.Blank>
+          :
+          <Layouts.Blank>
+            <Route exact path="/login"><Pages.Login /></Route>
+            <Route       path="*"><Redirect to="/login" /></Route>
+          </Layouts.Blank>
+        }
       </Switch>
     </BrowserRouter>
   )
