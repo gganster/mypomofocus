@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  min-width: 260px;
+  width: 100%;
+  border: 1px solid rgb(238, 238, 238);
+  box-shadow: rgb(160, 160, 160) 0px 2px 2px;
+  padding: 12px;
+  cursor: pointer;
+  
+  .text {
+    color: rgb(119, 119, 119);
+    font-weight: bold;
+    user-select: none;
+  }
+  .icon {
+    margin-right: 7px;
+    width: 18px;
+    height: 18px;
+  }
+
+  &:active {
+    box-shadow: #FFFFFF 0px 0px 0px;
+  }
+}

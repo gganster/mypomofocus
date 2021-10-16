@@ -7,7 +7,8 @@ const Login = () => {
   return (
     <div className={styles.container}>
       <CPNT.Card>
-        f
+        <h1 className={styles.title}>Login</h1>
+        <CPNT.GoogleLoginButton />
       </CPNT.Card>
     </div>
   )
