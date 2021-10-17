@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  width: 100%;
+  border-bottom: 2px solid darken(#C34C48, 2%);
+  min-height: 80px;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    height: 50px;
+  }
+
+  .logout {
+    cursor: pointer;
+  }
+}

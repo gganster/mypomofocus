@@ -33,6 +33,9 @@ const useAuth = () => {
           dispatch({type: "logout"});
           setUser(false);
         }
+      } else {
+        setUser(null);
+        dispatch({type: "logout"});
       }
       setLoading(false);
     })
