@@ -1,15 +1,21 @@
 import React from "react";
 import "./index.scss";
 
+import {
+  BrowserRouter
+} from "react-router-dom";
+
 import Router from "./Router";
 
 import {Provider as UserProvider} from "./contexts/user";
 
 function App() {
   return (
-    <UserProvider>
-      <Router />
-    </UserProvider>
+    <BrowserRouter>
+      <UserProvider>
+        <Router />
+      </UserProvider>
+    </BrowserRouter>
   );
 }
 

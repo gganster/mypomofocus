@@ -1,7 +1,6 @@
 import React from "react";
 
 import {
-  BrowserRouter,
   Switch,
   Route,
   Redirect
@@ -17,21 +16,19 @@ const Router = () => {
   if (loading) return <Pages.Loading />
 
   return (
-    <BrowserRouter>
-      <Switch>
-        {user ?
-          <Layouts.Blank>
-            <Route exact path="/">     <Pages.Home /></Route>
-            <Route       path="*"><Redirect to="/" /></Route>
-          </Layouts.Blank>
-          :
-          <Layouts.Blank>
-            <Route exact path="/login"><Pages.Login /></Route>
-            <Route       path="*"><Redirect to="/login" /></Route>
-          </Layouts.Blank>
-        }
-      </Switch>
-    </BrowserRouter>
+    <Switch>
+      {user ?
+        <Layouts.Blank>
+          <Route exact path="/">     <Pages.Home /></Route>
+          <Route       path="*"><Redirect to="/" /></Route>
+        </Layouts.Blank>
+        :
+        <Layouts.Blank>
+          <Route exact path="/login"><Pages.Login /></Route>
+          <Route       path="*"><Redirect to="/login" /></Route>
+        </Layouts.Blank>
+      }
+    </Switch>
   )
 }
 
