@@ -10,24 +10,24 @@ const Button = (props) => {
     onClick,
     children,
     className,
-    containerStyle,
-    textStyle
+    style
   } = props;
 
   return (
-    <span className={`${styles.container} ${
-                      color === "light" ? styles.light :
-                      color === "grey" ? styles.grey :
-                      color === "transparent" ? styles.transparent :
-                      color === "opacity" ? styles.opacity : styles.grey
-                    } ${
-                      size === "sm" ? styles.sm :
-                      size === "md" ? styles.md :
-                      size === "lg" ? styles.mg : styles.md
-                    } ${className ?? ""}`}
-        style={containerStyle}
-        onClick={onClick}>
-          {children}
+    <span onClick={onClick}>
+      <span className={`${styles.container} ${
+                        color === "light" ? styles.light :
+                        color === "grey" ? styles.grey :
+                        color === "transparent" ? styles.transparent :
+                        color === "opacity" ? styles.opacity : styles.grey
+                      } ${
+                        size === "sm" ? styles.sm :
+                        size === "md" ? styles.md :
+                        size === "lg" ? styles.mg : styles.md
+                      } ${className ?? ""}`}
+          style={style}>
+            {children}
+      </span>
     </span>
   )
 }

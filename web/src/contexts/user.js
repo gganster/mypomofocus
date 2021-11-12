@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext} from "react";
+import React, { createContext, useReducer, useContext, useEffect} from "react";
 
 const Context = createContext();
 
@@ -8,7 +8,7 @@ const Default = {
 
 function Reducer(state, action) {
   switch(action.type) {
-    case "loading": return {...action.user};
+    case "login": return {...action.user};
     case "logout":  return Default;
     default:        return state
   }

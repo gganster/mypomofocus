@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  padding: 18px 0px 18px 14px;
+  margin-top: 8px;
+  cursor: pointer;
+  color: black;
+
+  &:hover {
+    border-left: 6px solid rgb(200, 200, 200);
+    padding-left: 8px;
+  }
+  &.active {
+    border-left: 6px solid rgb(34, 34, 34);
+    padding-left: 8px;
+  }
+}
